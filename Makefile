@@ -1,35 +1,29 @@
-# Compilador e flags
+# Compilador
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++17 -fprofile-arcs -ftest-coverage
-LDFLAGS = -lgcov
+# Flags de compilação
+CXXFLAGS = -Wall -Wextra -std=c++11
 
-# Nome dos arquivos
+# Nome do executável
 TARGET = testa_velha
-SRC = velha.cpp testa_velha.cpp
-OBJ = $(SRC:.cpp=.o)
 
-# Regra padrão
+# Arquivos objeto
+OBJS = velha.o testa_velha.o
+
+# Regra padrão: compilar e linkar
 all: $(TARGET)
 
-# Linkagem final
-$(TARGET): $(OBJ)
-	$(CXX) $(OBJ) -o $@ $(LDFLAGS)
+# Linka os objetos para gerar o executável
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Compilação dos arquivos .cpp
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Compila velha.cpp em velha.o
+velha.o: velha.cpp velha.h
+	$(CXX) $(CXXFLAGS) -c velha.cpp
 
-# Geração da cobertura de código
-coverage: $(TARGET)
-	./$(TARGET)
-	gcov velha.cpp
+# Compila testa_velha.cpp em testa_velha.o
+testa_velha.o: testa_velha.cpp velha.h
+	$(CXX) $(CXXFLAGS) -c testa_velha.cpp
 
-# Análise estática com cppcheck
-cppcheck:
-	cppcheck --enable=warning .
-
-# Limpeza dos arquivos gerados
+# Limpa arquivos compilados
 clean:
-	rm -f *.o $(TARGET) *.gcno *.gcda *.gcov
-
-.PHONY: all clean coverage cppcheck
+	rm -f $(OBJS) $(TARGET)
