@@ -33,6 +33,19 @@ bool verifica_vitoria_X(int tabuleiro[3][3]) {
 }
 
 bool verifica_vitoria_O(int tabuleiro[3][3]) {
+        char o = 'O';
+    if (tabuleiro[0][0] == o && tabuleiro[1][1] == o && tabuleiro[2][2] == o) {
+        return true;
+    }   else if (tabuleiro[0][2] == o && tabuleiro[1][1] == o && tabuleiro[2][0] == o) {
+        return true;
+    } else for (int i = 0; i < 3; i++) {
+        if (tabuleiro[i][0] == o && tabuleiro[i][1] == o && tabuleiro[i][2] == o) {
+            return true;
+        }
+        else if (tabuleiro[0][i] == o && tabuleiro[1][i] == o && tabuleiro[2][i] == o) {
+            return true;
+        }
+    }
     return false;
 }
 

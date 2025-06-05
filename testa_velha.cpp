@@ -28,7 +28,35 @@ void testa_vitoria_X() {
     std::cout << "Teste vitória X coluna: " << (verifica_vitoria_X(tabuleiro3) ? "Passou" : "Falhou") << "\n";
 }
 
+void testa_vitoria_O() {
+    // Vitória na diagonal principal
+    int tabuleiro1[3][3] = {
+        {'O', 0, 0},
+        {0, 'O', 0},
+        {0, 0, 'O'}
+    };
+
+    // Vitória na linha 0
+    int tabuleiro2[3][3] = {
+        {'O', 'O', 'O'},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+
+    // Vitória na coluna 2
+    int tabuleiro3[3][3] = {
+        {0, 0, 'O'},
+        {0, 0, 'O'},
+        {0, 0, 'O'}
+    };
+
+    std::cout << "Teste vitória O diagonal: " << (verifica_vitoria_X(tabuleiro1) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste vitória O linha: " << (verifica_vitoria_X(tabuleiro2) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste vitória O coluna: " << (verifica_vitoria_X(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+}
+
 int main() {
     testa_vitoria_X();
+    testa_vitoria_O();
     return 0;
 }
