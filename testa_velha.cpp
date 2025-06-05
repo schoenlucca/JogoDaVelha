@@ -50,9 +50,9 @@ void testa_vitoria_O() {
         {0, 0, 'O'}
     };
 
-    std::cout << "Teste vitória O diagonal: " << (verifica_vitoria_X(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória O linha: " << (verifica_vitoria_X(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória O coluna: " << (verifica_vitoria_X(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste vitória O diagonal: " << (verifica_vitoria_O(tabuleiro1) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste vitória O linha: " << (verifica_vitoria_O(tabuleiro2) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste vitória O coluna: " << (verifica_vitoria_O(tabuleiro3) ? "Passou" : "Falhou") << "\n";
 }
 
 int main() {
