@@ -50,8 +50,14 @@ bool verifica_vitoria_O(int tabuleiro[3][3]) {
 }
 
 bool jogo_indefinido(int tabuleiro[3][3]) {
+    if (!jogo_impossivel(tabuleiro)) {
+        if (!verifica_vitoria_O && !verifica_vitoria_X) {
+            return true;
+        }
+    }
     return false;
 }
+
 
 bool jogo_impossivel(int tabuleiro[3][3]) {
     int contador_x, contador_o = 0;
