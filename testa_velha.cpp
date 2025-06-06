@@ -134,24 +134,26 @@ void testa_verifica_jogo_indefinido() {
         {0, 1, 0},
         {2, 0, 0}
     };
-    int saida = verifica_jogo_da_velha(tabuleiro1);
-    std::cout << saida;
+    int saida1 = verifica_jogo_da_velha(tabuleiro1);
+    std::cout << "Teste jogo indefinido 1: " << (saida1 == -1 ? "Passou" : "Falhou") << "\n";
+
     // Tabuleiro 2: jogo em andamento, sem vencedor
     int tabuleiro2[3][3] = {
         {1, 2, 1},
         {2, 2, 0},
         {1, 0, 0}
     };
-    std::cout << "Teste jogo indefinido 2: " << (verifica_jogo_da_velha(tabuleiro2) == -1 ? "Passou" : "Falhou") << "\n";
-
+    int saida2 = verifica_jogo_da_velha(tabuleiro2);
+    std::cout << saida2;
+    std::cout << "Teste jogo indefinido 2: " << (saida2 == -1 ? "Passou" : "Falhou") << "\n";
     // Tabuleiro 3: jogo em andamento, com poucos movimentos
     int tabuleiro3[3][3] = {
         {0, 0, 0},
         {0, 1, 0},
         {0, 0, 0}
     };
-    std::cout << "Teste jogo indefinido 3: " << (verifica_jogo_da_velha(tabuleiro3) == -1 ? "Passou" : "Falhou") << "\n";
-
+    int saida3 = verifica_jogo_da_velha(tabuleiro3);
+    std::cout << "Teste jogo indefinido 1: " << (saida3 == -1 ? "Passou" : "Falhou") << "\n";
     // Tabuleiro 4: vitória de X (não é indefinido)
     int tabuleiro4[3][3] = {
         {1, 1, 1},
