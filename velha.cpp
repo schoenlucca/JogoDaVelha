@@ -49,18 +49,8 @@ bool verifica_vitoria_O(int tabuleiro[3][3]) {
     return false;
 }
 
+//já considera que o jogo não tem ganhadores e é possível
 bool jogo_indefinido(int tabuleiro[3][3]) {
-    if (jogo_impossivel(tabuleiro)) {
-        return false;  // estado impossível, não é aberto
-    }
-    char x = 'X';
-    char o = 'O';
-    for (int i = 0; i < 3; i++) {
-        if (tabuleiro[i][0] == x && tabuleiro[i][1] == x && tabuleiro[i][2] == x)
-            return false;
-        if (tabuleiro[i][0] == o && tabuleiro[i][1] == o && tabuleiro[i][2] == o)
-            return false;
-    }
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (tabuleiro[i][j] == 0) {  // espaço vazio encontrado
@@ -70,7 +60,6 @@ bool jogo_indefinido(int tabuleiro[3][3]) {
     }
     return false;
 }
-
 
 
 bool jogo_impossivel(int tabuleiro[3][3]) {
