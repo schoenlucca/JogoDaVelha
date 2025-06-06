@@ -107,11 +107,39 @@ void testa_jogo_indefinido() {
     std::cout << "Teste jogo indefinido 3: " << (jogo_indefinido(tabuleiro3) ? "Passou" : "Falhou") << "\n";
 }
 
+void testa_jogo_indefinido_linhas() {
+    // Tabuleiro 1: nenhuma linha completa, espaço vazio, jogo aberto
+    int tabuleiro1[3][3] = {
+        {'X', 'O', 0},  // linha 0 aberta
+        {'O', 'X', 0},  // linha 1 aberta
+        {'O', 0, 'X'}   // linha 2 aberta
+    };
+
+    // Tabuleiro 2: linha 0 aberta, mas linhas não completadas
+    int tabuleiro2[3][3] = {
+        {'X', 'O', 'O'},
+        {'O', 0, 'X'},
+        {0, 'X', 0}
+    };
+
+    // Tabuleiro 3: jogo aberto, linhas todas incompletas, espaços vazios
+    int tabuleiro3[3][3] = {
+        {0, 'O', 'X'},
+        {'X', 0, 'O'},
+        {'O', 'X', 0}
+    };
+
+    std::cout << "Teste linhas aberto 1: " << (jogo_indefinido(tabuleiro1) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste linhas aberto 2: " << (jogo_indefinido(tabuleiro2) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Teste linhas aberto 3: " << (jogo_indefinido(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+}
+
+
 
 int main() {
     testa_vitoria_X();
     testa_vitoria_O();
     testa_impossivel();
-    testa_jogo_indefinido();
+    testa_jogo_indefinido_linhas();
     return 0;
 }
