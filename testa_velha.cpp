@@ -61,31 +61,72 @@ void testa_vitoria_O() {
 void testa_impossivel() {
     
     int tabuleiro1[3][3] = {
-        {'O', 'O', 0},
-        {0, 'O', 0},
-        {0, 0, 'O'}
+        {2, 2, 0},
+        {0, 2, 0},
+        {0, 0, 2}
     };
     
     std::cout << "Testa_impossivel - caso 1: " << (verifica_jogo_da_velha(tabuleiro1) == -2 ? "Passou" : "Falhou") << "\n";
 
 
     int tabuleiro2[3][3] = {
-        {'O', 'O', 'O'},
-        {0, 'X', 0},
-        {0, 'X', 0}
+        {2, 2, 2},
+        {0, 1, 0},
+        {0, 1, 0}
     };
 
     std::cout << "Testa_impossivel - caso 2: " << (verifica_jogo_da_velha(tabuleiro2) == -2 ? "Passou" : "Falhou") << "\n";
 
 
     int tabuleiro3[3][3] = {
-        {0, 0, 'X'},
-        {0, 0, 'X'},
-        {'O', 0, 'X'}
+        {0, 0, 1},
+        {0, 0, 1},
+        {2, 0, 1}
     };
 
     std::cout << "Testa_impossivel - caso 3: " << (verifica_jogo_da_velha(tabuleiro3) == -2 ? "Passou" : "Falhou") << "\n";
+
+    // Caso 1 — Válido (3 X, 3 O)
+    int tabuleiro4[3][3] = {
+        {1, 2, 1},
+        {2, 1, 2},
+        {0, 0, 0}
+    };
+    std::cout << "Caso 1 (válido): " << (jogo_impossivel(tabuleiro4) != -2 ? "Falhou" : "Passou") << "\n";
+
+    // Caso 2 — Inválido: X e O vencem ao mesmo tempo
+    int tabuleiro5[3][3] = {
+        {1, 1, 1},
+        {2, 2, 2},
+        {0, 0, 0}
+    };
+    std::cout << "Caso 2 (dupla vitória): " << (verifica_jogo_da_velha(tabuleiro5) == -2 ? "Passou" : "Falhou") << "\n";
+
+    // Caso 3 — Válido (5 X, 4 O)
+    int tabuleiro6[3][3] = {
+        {1, 2, 1},
+        {2, 1, 0},
+        {2, 1, 1}
+    };
+    std::cout << "Caso 3 (válido): " << (verifica_jogo_da_velha(tabuleiro6) != -2 ? "Falhou" : "Passou") << "\n";
+
+    // Caso 4 — Inválido (4 X, 5 O)
+    int tabuleiro7[3][3] = {
+        {2, 2, 1},
+        {2, 1, 2},
+        {1, 0, 1}
+    };
+    std::cout << "Caso 4 (O jogou mais que X): " << (verifica_jogo_da_velha(tabuleiro7) == -2 ? "Passou" : "Falhou") << "\n";
+
+    // Caso 5 — Inválido (6 X, 2 O)
+    int tabuleiro8[3][3] = {
+        {1, 1, 1},
+        {1, 0, 0},
+        {1, 2, 2}
+    };
+    std::cout << "Caso 5 (X jogou muito mais): " << (verifica_jogo_da_velha(tabuleiro8) == -2 ? "Passou" : "Falhou") << "\n";
 }
+
 
 void testa_jogo_indefinido() {
     // Tabuleiro 1: jogo em andamento, espaços vazios, sem vencedor
