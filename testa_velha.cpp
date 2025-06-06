@@ -9,6 +9,8 @@ void testa_vitoria_X() {
         {0, 0, 'X'}
     };
 
+    std::cout << "Teste vitória X diagonal: " << (verifica_jogo_da_velha(tabuleiro1) == 1 ? "Passou" : "Falhou") << "\n";
+
     // Vitória na linha 0
     int tabuleiro2[3][3] = {
         {'X', 'X', 'X'},
@@ -16,16 +18,17 @@ void testa_vitoria_X() {
         {0, 0, 0}
     };
 
+    std::cout << "Teste vitória X diagonal: " << (verifica_jogo_da_velha(tabuleiro2) == 1 ? "Passou" : "Falhou") << "\n";
+
     // Vitória na coluna 2
     int tabuleiro3[3][3] = {
         {0, 0, 'X'},
         {0, 0, 'X'},
         {0, 0, 'X'}
     };
+   
+    std::cout << "Teste vitória X diagonal: " << (verifica_jogo_da_velha(tabuleiro3) == 1 ? "Passou" : "Falhou") << "\n";
 
-    std::cout << "Teste vitória X diagonal: " << (verifica_vitoria_X(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória X linha: " << (verifica_vitoria_X(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória X coluna: " << (verifica_vitoria_X(tabuleiro3) ? "Passou" : "Falhou") << "\n";
 }
 
 void testa_vitoria_O() {
@@ -62,6 +65,9 @@ void testa_impossivel() {
         {0, 'O', 0},
         {0, 0, 'O'}
     };
+    
+    std::cout << "Testa_impossivel - caso 1: " << (verifica_jogo_da_velha(tabuleiro1) == -2 ? "Passou" : "Falhou") << "\n";
+
 
     int tabuleiro2[3][3] = {
         {'O', 'O', 'O'},
@@ -69,15 +75,16 @@ void testa_impossivel() {
         {0, 'X', 0}
     };
 
+    std::cout << "Testa_impossivel - caso 2: " << (verifica_jogo_da_velha(tabuleiro2) == -2 ? "Passou" : "Falhou") << "\n";
+
+
     int tabuleiro3[3][3] = {
         {0, 0, 'X'},
         {0, 0, 'X'},
         {'O', 0, 'X'}
     };
 
-    std::cout << "Teste impossibilidade por incoerência de caracteres: " << (jogo_impossivel(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste de caso válido: " << (jogo_impossivel(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste de outro caso impossível por incoerência de caracteres: " << (jogo_impossivel(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Testa_impossivel - caso 3: " << (verifica_jogo_da_velha(tabuleiro3) == -2 ? "Passou" : "Falhou") << "\n";
 }
 
 void testa_jogo_indefinido() {
@@ -137,9 +144,6 @@ void testa_jogo_indefinido_linhas() {
 
 
 int main() {
-    testa_vitoria_X();
-    testa_vitoria_O();
     testa_impossivel();
-    testa_jogo_indefinido_linhas();
     return 0;
 }

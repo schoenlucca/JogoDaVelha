@@ -3,14 +3,15 @@
 
 // Função principal
 int verifica_jogo_da_velha(int tabuleiro[3][3]) {
-    if (verifica_vitoria_X(tabuleiro)) {
+    if (jogo_impossivel(tabuleiro)) {
+        return -2;
+    // as próximas funções partem do princípio de que é um jogo possível
+    } else if (jogo_indefinido(tabuleiro)) {
+        return -1;
+    } else if (verifica_vitoria_X(tabuleiro)) {
         return 1;
     } else if (verifica_vitoria_O(tabuleiro)) {
         return 2;
-    } else if (jogo_impossivel(tabuleiro)) {
-        return -2;
-    } else if (jogo_indefinido(tabuleiro)) {
-        return -1;
     } else return 0; // caso de empate
 }
 
