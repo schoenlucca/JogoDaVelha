@@ -62,7 +62,7 @@ bool jogo_indefinido(int tabuleiro[3][3]) {
 
 
 bool jogo_impossivel(int tabuleiro[3][3]) {
-    int contador_x, contador_o = 0;
+    int contador_x = 0, contador_o = 0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (tabuleiro[i][j] == 1) {
