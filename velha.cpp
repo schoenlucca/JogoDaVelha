@@ -54,5 +54,20 @@ bool jogo_indefinido(int tabuleiro[3][3]) {
 }
 
 bool jogo_impossivel(int tabuleiro[3][3]) {
+    int contador_x, contador_o = 0;
+    char x = 'X';
+    char o = 'O';
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (tabuleiro[i][j] == x) {
+                contador_x += 1;
+            } else if (tabuleiro[i][j] == o) {
+                contador_o += 1;
+            }
+        }
+    }
+    if (contador_o > contador_x + 1 || contador_x > contador_o + 1) {
+        return true;
+    }
     return false;
 }
