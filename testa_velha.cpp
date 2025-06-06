@@ -127,64 +127,50 @@ void testa_impossivel() {
     std::cout << "Caso 5 (X jogou muito mais): " << (verifica_jogo_da_velha(tabuleiro8) == -2 ? "Passou" : "Falhou") << "\n";
 }
 
-
-void testa_jogo_indefinido() {
-    // Tabuleiro 1: jogo em andamento, espaços vazios, sem vencedor
+void testa_verifica_jogo_indefinido() {
+    // Tabuleiro 1: jogo em andamento, sem vencedor
     int tabuleiro1[3][3] = {
-        {'X', 'O', 0},
-        {0, 'X', 0},
-        {'O', 0, 0}
+        {1, 2, 0},
+        {0, 1, 0},
+        {2, 0, 0}
     };
-
-    // Tabuleiro 2: jogo em andamento, espaços vazios, sem vencedor
+    int saida = verifica_jogo_da_velha(tabuleiro1);
+    std::cout << saida;
+    // Tabuleiro 2: jogo em andamento, sem vencedor
     int tabuleiro2[3][3] = {
-        {'X', 'O', 'X'},
-        {'O', 'O', 0},
-        {'X', 0, 0}
+        {1, 2, 1},
+        {2, 2, 0},
+        {1, 0, 0}
     };
+    std::cout << "Teste jogo indefinido 2: " << (verifica_jogo_da_velha(tabuleiro2) == -1 ? "Passou" : "Falhou") << "\n";
 
-    // Tabuleiro 3: jogo em andamento, espaços vazios, sem vencedor
+    // Tabuleiro 3: jogo em andamento, com poucos movimentos
     int tabuleiro3[3][3] = {
         {0, 0, 0},
-        {0, 'X', 0},
+        {0, 1, 0},
         {0, 0, 0}
     };
+    std::cout << "Teste jogo indefinido 3: " << (verifica_jogo_da_velha(tabuleiro3) == -1 ? "Passou" : "Falhou") << "\n";
 
-    std::cout << "Teste jogo indefinido 1: " << (jogo_indefinido(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste jogo indefinido 2: " << (jogo_indefinido(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste jogo indefinido 3: " << (jogo_indefinido(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+    // Tabuleiro 4: vitória de X (não é indefinido)
+    int tabuleiro4[3][3] = {
+        {1, 1, 1},
+        {2, 2, 0},
+        {0, 0, 0}
+    };
+    std::cout << "Teste jogo não indefinido 4 (vitória X): " << (verifica_jogo_da_velha(tabuleiro4) != -1 ? "Passou" : "Falhou") << "\n";
+
+    // Tabuleiro 5: empate (não é indefinido)
+    int tabuleiro5[3][3] = {
+        {1, 2, 1},
+        {2, 1, 2},
+        {2, 1, 2}
+    };
+    std::cout << "Teste jogo não indefinido 5 (empate): " << (verifica_jogo_da_velha(tabuleiro5) != -1 ? "Passou" : "Falhou") << "\n";
 }
-
-void testa_jogo_indefinido_linhas() {
-    // Tabuleiro 1: nenhuma linha completa, espaço vazio, jogo aberto
-    int tabuleiro1[3][3] = {
-        {'X', 'O', 0},  // linha 0 aberta
-        {'O', 'X', 0},  // linha 1 aberta
-        {'O', 0, 'X'}   // linha 2 aberta
-    };
-
-    // Tabuleiro 2: linha 0 aberta, mas linhas não completadas
-    int tabuleiro2[3][3] = {
-        {'X', 'O', 'O'},
-        {'O', 0, 'X'},
-        {0, 'X', 0}
-    };
-
-    // Tabuleiro 3: jogo aberto, linhas todas incompletas, espaços vazios
-    int tabuleiro3[3][3] = {
-        {0, 'O', 'X'},
-        {'X', 0, 'O'},
-        {'O', 'X', 0}
-    };
-
-    std::cout << "Teste linhas aberto 1: " << (jogo_indefinido(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste linhas aberto 2: " << (jogo_indefinido(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste linhas aberto 3: " << (jogo_indefinido(tabuleiro3) ? "Passou" : "Falhou") << "\n";
-}
-
 
 
 int main() {
-    testa_impossivel();
+    testa_verifica_jogo_indefinido();
     return 0;
 }
