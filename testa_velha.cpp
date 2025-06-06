@@ -94,6 +94,33 @@ void testa_vitoria_O() {
     std::cout << "Vitória O diagonal principal: " << (verifica_vitoria_O(tabuleiro1) ? "Passou" : "Falhou") << "\n";
     std::cout << "Vitória O linha 0: " << (verifica_vitoria_O(tabuleiro2) ? "Passou" : "Falhou") << "\n";
     std::cout << "Vitória O coluna 2: " << (verifica_vitoria_O(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+
+        // Caso 4: Vitória de O na linha 1
+    int tabuleiro4[3][3] = {
+        {1, 0, 0},
+        {2, 2, 2},
+        {1, 0, 0}
+    };
+
+    // Caso 5: Vitória de O na coluna 0
+    int tabuleiro5[3][3] = {
+        {2, 1, 1},
+        {2, 0, 0},
+        {2, 1, 0}
+    };
+
+    // Caso 6: Vitória de O na diagonal secundária
+    int tabuleiro6[3][3] = {
+        {1, 0, 2},
+        {0, 2, 0},
+        {2, 1, 1}
+    };
+
+    std::cout << "Vitória O linha 1: " << (verifica_vitoria_O(tabuleiro4) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória O coluna 0: " << (verifica_vitoria_O(tabuleiro5) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória O diagonal secundária: " << (verifica_vitoria_O(tabuleiro6) ? "Passou" : "Falhou") << "\n";
+
+
 }
 
 
