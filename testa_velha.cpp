@@ -5,34 +5,34 @@ void testa_vitoria_X() {
     // Vitória na diagonal principal
     int tabuleiro1[3][3] = {
         {1, 0, 0},
-        {0, 1, 0},
-        {0, 0, 1}
+        {2, 1, 0},
+        {2, 2, 1}
     };
-    std::cout << "Teste vitória X diagonal principal: " << (verifica_jogo_da_velha(tabuleiro1) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X diagonal principal: " << (verifica_jogo_da_velha(tabuleiro1) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória na linha 0
     int tabuleiro2[3][3] = {
         {1, 1, 1},
-        {0, 0, 0},
+        {2, 2, 0},
         {0, 0, 0}
     };
-    std::cout << "Teste vitória X linha 0: " << (verifica_jogo_da_velha(tabuleiro2) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X linha 0: " << (verifica_jogo_da_velha(tabuleiro2) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória na coluna 2
     int tabuleiro3[3][3] = {
-        {0, 0, 1},
-        {0, 0, 1},
+        {0, 2, 1},
+        {2, 0, 1},
         {0, 0, 1}
     };
-    std::cout << "Teste vitória X coluna 2: " << (verifica_jogo_da_velha(tabuleiro3) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X coluna 2: " << (verifica_jogo_da_velha(tabuleiro3) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória na linha 2
     int tabuleiro4[3][3] = {
-        {2, 0, 2},
-        {0, 2, 0},
+        {2, 2, 0},
+        {0, 0, 0},
         {1, 1, 1}
     };
-    std::cout << "Teste vitória X linha 2: " << (verifica_jogo_da_velha(tabuleiro4) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X linha 2: " << (verifica_jogo_da_velha(tabuleiro4) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória na coluna 0
     int tabuleiro5[3][3] = {
@@ -40,15 +40,15 @@ void testa_vitoria_X() {
         {1, 2, 0},
         {1, 0, 0}
     };
-    std::cout << "Teste vitória X coluna 0: " << (verifica_jogo_da_velha(tabuleiro5) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X coluna 0: " << (verifica_jogo_da_velha(tabuleiro5) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória na diagonal secundária
     int tabuleiro6[3][3] = {
         {0, 0, 1},
-        {0, 1, 0},
+        {0, 1, 2},
         {1, 0, 2}
     };
-    std::cout << "Teste vitória X diagonal secundária: " << (verifica_jogo_da_velha(tabuleiro6) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X diagonal secundária: " << (verifica_jogo_da_velha(tabuleiro6) == 1 ? "Passou" : "Falhou") << "\n";
 
     // Vitória com tabuleiro completo
     int tabuleiro7[3][3] = {
@@ -56,16 +56,17 @@ void testa_vitoria_X() {
         {2, 1, 2},
         {2, 1, 1}
     };
-    std::cout << "Teste vitória X com tabuleiro cheio: " << (verifica_jogo_da_velha(tabuleiro7) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X com tabuleiro cheio: " << (verifica_jogo_da_velha(tabuleiro7) == 1 ? "Passou" : "Falhou") << "\n";
 
-    // Vitória com tabuleiro parcialmente preenchido
+    // Vitória com contagem correta de X e O (5 X e 4 O)
     int tabuleiro8[3][3] = {
-        {0, 2, 1},
-        {0, 1, 2},
-        {1, 0, 0}
+        {1, 2, 0},
+        {1, 2, 0},
+        {1, 0, 2}
     };
-    std::cout << "Teste vitória X parcial: " << (verifica_jogo_da_velha(tabuleiro8) == 1 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória X coluna 0 (jogo válido): " << (verifica_jogo_da_velha(tabuleiro8) == 1 ? "Passou" : "Falhou") << "\n";
 }
+
 
 
 void testa_vitoria_O() {
