@@ -261,6 +261,31 @@ void testa_empate() {
     std::cout << "Empate 1: " << (verifica_jogo_da_velha(tabuleiro1) == 0 ? "Passou" : "Falhou") << "\n";
     std::cout << "Empate 2: " << (verifica_jogo_da_velha(tabuleiro2) == 0 ? "Passou" : "Falhou") << "\n";
     std::cout << "Empate 3: " << (verifica_jogo_da_velha(tabuleiro3) == 0 ? "Passou" : "Falhou") << "\n";
+
+        // Caso 4: tabuleiro cheio, jogadas bem distribuídas
+    int tabuleiro4[3][3] = {
+        {1, 2, 1},
+        {1, 2, 2},
+        {2, 1, 1}
+    };
+
+    // Caso 5: padrão de preenchimento alternado, sem vitória
+    int tabuleiro5[3][3] = {
+        {2, 1, 2},
+        {1, 2, 1},
+        {1, 2, 1}
+    };
+
+    // Caso 6: nenhuma linha, coluna ou diagonal com 3 iguais
+    int tabuleiro6[3][3] = {
+        {1, 1, 2},
+        {2, 2, 1},
+        {1, 2, 1}
+    };
+
+    std::cout << "Empate 4: " << (verifica_jogo_da_velha(tabuleiro4) == 0 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Empate 5: " << (verifica_jogo_da_velha(tabuleiro5) == 0 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Empate 6: " << (verifica_jogo_da_velha(tabuleiro6) == 0 ? "Passou" : "Falhou") << "\n";
 }
 
 int main() {
