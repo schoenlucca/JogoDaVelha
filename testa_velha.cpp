@@ -70,31 +70,32 @@ void testa_vitoria_X() {
 
 
 void testa_vitoria_O() {
-    // Vitória na diagonal principal
+    // Caso 1: Vitória de O na diagonal principal
     int tabuleiro1[3][3] = {
-        {'O', 0, 0},
-        {0, 'O', 0},
-        {0, 0, 'O'}
+        {2, 0, 0},
+        {1, 2, 1},
+        {0, 1, 2}
     };
 
-    // Vitória na linha 0
+    // Caso 2: Vitória de O na linha 0 (com Xs no resto)
     int tabuleiro2[3][3] = {
-        {'O', 'O', 'O'},
-        {0, 0, 0},
+        {2, 2, 2},
+        {1, 1, 0},
         {0, 0, 0}
     };
 
-    // Vitória na coluna 2
+    // Caso 3: Vitória de O na coluna 2 (com tabuleiro parcialmente preenchido)
     int tabuleiro3[3][3] = {
-        {0, 0, 'O'},
-        {0, 0, 'O'},
-        {0, 0, 'O'}
+        {1, 0, 2},
+        {1, 0, 2},
+        {0, 0, 2}
     };
 
-    std::cout << "Teste vitória O diagonal: " << (verifica_vitoria_O(tabuleiro1) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória O linha: " << (verifica_vitoria_O(tabuleiro2) ? "Passou" : "Falhou") << "\n";
-    std::cout << "Teste vitória O coluna: " << (verifica_vitoria_O(tabuleiro3) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória O diagonal principal: " << (verifica_vitoria_O(tabuleiro1) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória O linha 0: " << (verifica_vitoria_O(tabuleiro2) ? "Passou" : "Falhou") << "\n";
+    std::cout << "Vitória O coluna 2: " << (verifica_vitoria_O(tabuleiro3) ? "Passou" : "Falhou") << "\n";
 }
+
 
 void testa_impossivel() {
     
@@ -210,6 +211,6 @@ void testa_verifica_jogo_indefinido() {
 
 
 int main() {
-    testa_vitoria_X();
+    testa_vitoria_O();
     return 0;
 }
