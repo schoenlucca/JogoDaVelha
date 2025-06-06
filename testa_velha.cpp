@@ -236,8 +236,34 @@ void testa_verifica_jogo_indefinido() {
     std::cout << "Teste jogo não indefinido 5 (empate): " << (verifica_jogo_da_velha(tabuleiro5) != -1 ? "Passou" : "Falhou") << "\n";
 }
 
+void testa_empate() {
+    // Caso 1: tabuleiro cheio, sem vencedor
+    int tabuleiro1[3][3] = {
+        {1, 2, 1},
+        {2, 1, 2},
+        {2, 1, 2}
+    };
+
+    // Caso 2: tabuleiro cheio, sem vencedor
+    int tabuleiro2[3][3] = {
+        {2, 1, 2},
+        {1, 1, 2},
+        {1, 2, 1}
+    };
+
+    // Caso 3: tabuleiro cheio, sem vencedor
+    int tabuleiro3[3][3] = {
+        {2, 1, 2},
+        {2, 1, 1},
+        {1, 2, 2}
+    };
+
+    std::cout << "Empate 1: " << (verifica_jogo_da_velha(tabuleiro1) == 0 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Empate 2: " << (verifica_jogo_da_velha(tabuleiro2) == 0 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Empate 3: " << (verifica_jogo_da_velha(tabuleiro3) == 0 ? "Passou" : "Falhou") << "\n";
+}
 
 int main() {
-    testa_vitoria_O();
+    testa_empate();
     return 0;
 }
