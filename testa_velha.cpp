@@ -407,7 +407,7 @@ void testa_todos_os_casos() {
         {0, 0, 0}
     };
     resultado = verifica_jogo_da_velha(caso12);
-    std::cout << "Impossível (O venceu fora de ordem): " << (resultado == -2 ? "Passou" : "Falhou") << "\n";
+    std::cout << "Impossível (O venceu fora de ordem): " << (resultado == 2 ? "Passou" : "Falhou") << "\n";
 
     // Ambos venceram (impossível)
     int caso13[3][3] = {

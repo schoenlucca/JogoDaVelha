@@ -63,6 +63,9 @@ bool jogo_indefinido(int tabuleiro[3][3]) {
 
 bool jogo_impossivel(int tabuleiro[3][3]) {
     int contador_x = 0, contador_o = 0;
+    if (verifica_vitoria_O(tabuleiro) && verifica_vitoria_X(tabuleiro)) {
+        return true;
+    }
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (tabuleiro[i][j] == 1) {
@@ -77,3 +80,5 @@ bool jogo_impossivel(int tabuleiro[3][3]) {
     }
     return false;
 }
+
+// em jogo impossivel, verificar se ambos ou jogadores nao ganharam o jogo
