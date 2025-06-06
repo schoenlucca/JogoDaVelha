@@ -288,7 +288,140 @@ void testa_empate() {
     std::cout << "Empate 6: " << (verifica_jogo_da_velha(tabuleiro6) == 0 ? "Passou" : "Falhou") << "\n";
 }
 
+void testa_todos_os_casos() {
+    int resultado;
+
+    std::cout << "======= Testando casos válidos: vitória de X =======\n";
+
+    // Diagonal principal (3 X, 2 O)
+    int caso1[3][3] = {
+        {1, 2, 0},
+        {0, 1, 2},
+        {0, 0, 1}
+    };
+    resultado = verifica_jogo_da_velha(caso1);
+    std::cout << "Vitória X (diagonal): " << (resultado == 1 ? "Passou" : "Falhou") << "\n";
+
+    // Linha 1 (3 X, 2 O)
+    int caso2[3][3] = {
+        {2, 0, 0},
+        {1, 1, 1},
+        {2, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso2);
+    std::cout << "Vitória X (linha): " << (resultado == 1 ? "Passou" : "Falhou") << "\n";
+
+    // Coluna 0 (3 X, 2 O)
+    int caso3[3][3] = {
+        {1, 2, 0},
+        {1, 2, 0},
+        {1, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso3);
+    std::cout << "Vitória X (coluna): " << (resultado == 1 ? "Passou" : "Falhou") << "\n";
+
+
+    std::cout << "\n======= Testando casos válidos: vitória de O =======\n";
+
+    // Linha 0 (3 O, 2 X)
+    int caso4[3][3] = {
+        {2, 2, 2},
+        {1, 1, 0},
+        {0, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso4);
+    std::cout << "Vitória O (linha): " << (resultado == 2 ? "Passou" : "Falhou") << "\n";
+
+    // Coluna 2 (3 O, 2 X)
+    int caso5[3][3] = {
+        {0, 1, 2},
+        {1, 0, 2},
+        {0, 0, 2}
+    };
+    resultado = verifica_jogo_da_velha(caso5);
+    std::cout << "Vitória O (coluna): " << (resultado == 2 ? "Passou" : "Falhou") << "\n";
+
+    // Diagonal secundária (3 O, 2 X)
+    int caso6[3][3] = {
+        {0, 0, 2},
+        {0, 2, 0},
+        {2, 1, 1}
+    };
+    resultado = verifica_jogo_da_velha(caso6);
+    std::cout << "Vitória O (diagonal secundária): " << (resultado == 2 ? "Passou" : "Falhou") << "\n";
+
+
+    std::cout << "\n======= Testando empate (sem vencedor, jogo completo) =======\n";
+
+    int caso7[3][3] = {
+        {1, 2, 1},
+        {2, 1, 2},
+        {2, 1, 2}
+    };
+    resultado = verifica_jogo_da_velha(caso7);
+    std::cout << "Empate 1: " << (resultado == 0 ? "Passou" : "Falhou") << "\n";
+
+    int caso8[3][3] = {
+        {2, 1, 2},
+        {1, 2, 1},
+        {1, 2, 1}
+    };
+    resultado = verifica_jogo_da_velha(caso8);
+    std::cout << "Empate 2: " << (resultado == 0 ? "Passou" : "Falhou") << "\n";
+
+
+    std::cout << "\n======= Testando jogo indefinido (em andamento) =======\n";
+
+    int caso9[3][3] = {
+        {1, 0, 0},
+        {2, 1, 0},
+        {0, 2, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso9);
+    std::cout << "Indefinido 1: " << (resultado == -1 ? "Passou" : "Falhou") << "\n";
+
+    int caso10[3][3] = {
+        {0, 0, 0},
+        {0, 1, 0},
+        {0, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso10);
+    std::cout << "Indefinido 2: " << (resultado == -1 ? "Passou" : "Falhou") << "\n";
+
+
+    std::cout << "\n======= Testando jogo impossível =======\n";
+
+    // X jogou 5, O jogou 1 (muito X)
+    int caso11[3][3] = {
+        {1, 1, 1},
+        {1, 0, 0},
+        {1, 2, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso11);
+    std::cout << "Impossível (X jogou demais): " << (resultado == -2 ? "Passou" : "Falhou") << "\n";
+
+    // O venceu, mas jogou menos (impossível)
+    int caso12[3][3] = {
+        {2, 2, 2},
+        {1, 1, 0},
+        {0, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso12);
+    std::cout << "Impossível (O venceu fora de ordem): " << (resultado == -2 ? "Passou" : "Falhou") << "\n";
+
+    // Ambos venceram (impossível)
+    int caso13[3][3] = {
+        {1, 1, 1},
+        {2, 2, 2},
+        {0, 0, 0}
+    };
+    resultado = verifica_jogo_da_velha(caso13);
+    std::cout << "Impossível (dupla vitória): " << (resultado == -2 ? "Passou" : "Falhou") << "\n";
+
+    std::cout << "\n======= Todos os testes concluídos =======\n";
+}
+
 int main() {
-    testa_empate();
+    testa_todos_os_casos();
     return 0;
 }
