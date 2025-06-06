@@ -92,7 +92,7 @@ void testa_impossivel() {
         {2, 1, 2},
         {0, 0, 0}
     };
-    std::cout << "Caso 1 (válido): " << (jogo_impossivel(tabuleiro4) != -2 ? "Falhou" : "Passou") << "\n";
+    std::cout << "Caso 1 (válido): " << (verifica_jogo_da_velha(tabuleiro4) != -2 ? "Falhou" : "Passou") << "\n";
 
     // Caso 2 — Inválido: X e O vencem ao mesmo tempo
     int tabuleiro5[3][3] = {
