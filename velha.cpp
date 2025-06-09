@@ -60,7 +60,7 @@ bool jogo_indefinido(int tabuleiro[3][3]) {
     return false;
 }
 
-
+//função que verifica a validade do jogo 
 bool jogo_impossivel(int tabuleiro[3][3]) {
     int contador_x = 0, contador_o = 0;
     if (verifica_vitoria_O(tabuleiro) && verifica_vitoria_X(tabuleiro)) {
