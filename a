@@ -1,0 +1,143 @@
+[33mcommit b89d18b83c0a46ae7deab8d3ad38902dc6af558d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Mon Jun 9 15:52:13 2025 -0300
+
+    completando comentários
+
+[33mcommit e2d05330c02536d1f7403b0dbfbd7769f8fd62e0[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 17:50:03 2025 -0300
+
+    correção da função jogo_impossivel com base nos resultados anteriores
+
+[33mcommit c209717e952270f464e1cedcd83f7478c4788b0f[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:48:23 2025 -0300
+
+    testando todos as funções em um bloco só
+
+[33mcommit 8b6c083b302f40d08b03f63c564928eb4240057e[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:40:20 2025 -0300
+
+    mais testes para os casos de empate
+
+[33mcommit 113b72b06775da68d7962cbbfd0dd45b05d3fef0[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:39:12 2025 -0300
+
+    testando se os casos de empate passam corretamente pelas demais funções e há o resultado esperado
+
+[33mcommit f24837b81492a5941cfd0b4edb59d1f1bc412b81[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:34:25 2025 -0300
+
+    mais teste para a função de verificação de vitória de O
+
+[33mcommit 47684dd001469cf35055f15eb4e2c23852da60ef[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:32:57 2025 -0300
+
+    testando alguns casos para a função de verificação de vitória de O
+
+[33mcommit 5beb658ffdc87fca8f4ba19b23bdc9c1cd0fffc1[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:09:09 2025 -0300
+
+    aplicação e correção dos casos de teste (apenas válidos) para verificar a eficiência de vitoria_X
+
+[33mcommit 0ca939519179d5edba00559cd7943978aabab5cb[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:05:30 2025 -0300
+
+    correção do erro em jogo_impossivel e testes na função de verificação de vitória de X
+
+[33mcommit 6bf398826ba5421791fbfcebc356580fe12313b4[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 13:00:45 2025 -0300
+
+    correção da função jogo_impossivel e detecção de erro em um caso teste
+
+[33mcommit 784015b8ff4847bad9ee2d98f3d99fe6fcc8e5d5[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 12:57:08 2025 -0300
+
+    testando mais casos para a função que verifica a indefinição do jogo
+
+[33mcommit 7567a99b3ede41b63d00970c97a747189ebb2631[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 11:01:38 2025 -0300
+
+    verificação da funcionalidade da função de verificação de indefinição
+
+[33mcommit 00b738954827b24b3c1d730a13c73897be898c3e[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 10:50:37 2025 -0300
+
+    correção do arquivo de teste e certificação da funcionalidade de jogo_impossivel
+
+[33mcommit 840ec27174da2941c0134e86827463ec00023d06[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 10:49:18 2025 -0300
+
+    teste da função jogo_impossível
+
+[33mcommit 1f488175fba26c404b029cf616c8778cc5232a2c[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 10:39:12 2025 -0300
+
+    teste de casos para o novo rearranjo da função principal, testando validade do tabuleiro
+
+[33mcommit b28f7b1b6aa7ff526e8c0e96a565d5a920ab7787[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 10:22:59 2025 -0300
+
+    Correção para a verificação de indefinição por linhas
+
+[33mcommit 8223e412754ba1aae5bb636893ab90b366bbd50b[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 09:19:36 2025 -0300
+
+    mais um teste para a verificação de jogo aberto para as linhas
+
+[33mcommit e5053e17d86583ab91547781f1ca530c1be9f65a[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 08:59:29 2025 -0300
+
+    Teste inicial da função jogo_indefinido
+
+[33mcommit 2d03d7f62379811b8bdd5b7222482f2959080282[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Fri Jun 6 08:51:16 2025 -0300
+
+    criação da função de verificação de jogo impossível e teste
+
+[33mcommit e793027e3408ea6277db32c48acb0877924dde31[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Thu Jun 5 19:52:57 2025 -0300
+
+    Corrigindo o testa_vitoria_o e conferindo a validade da função
+
+[33mcommit 4f4a9931536fa650d10f4617309264bf3a52cf39[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Thu Jun 5 19:48:22 2025 -0300
+
+    Criação e teste da função vitória O
+
+[33mcommit 379c702d2e40e738b9630c7e9ebecd202bf40b29[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Thu Jun 5 19:25:54 2025 -0300
+
+    Adição das funções em velha.h, construção e teste da função verifica_vitoria_X
+
+[33mcommit e0cdf63ce52eb59ad7882bb10382c9fc1923461b[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Thu Jun 5 18:44:21 2025 -0300
+
+    Criação das funções de verificação e da função principal
+
+[33mcommit 7571c4d0b4efc44ee01323cda1fa560b48820edf[m
+Author: schoenlucca <schoenlucca@gmail.com>
+Date:   Thu Jun 5 18:13:32 2025 -0300
+
+    Initial commit
